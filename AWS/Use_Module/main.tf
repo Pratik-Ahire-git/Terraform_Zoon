@@ -104,7 +104,7 @@ module "web_instance" {
 
   # Create ubuntu virtual Machine
   ec2 = {
-    ami                         = "ami-0f4e2eed7f5d84b15"
+    ami                         = "ami-068daf89d1895ab7b"
     Name                        = "web_VM"
     instance_type               = "t3.micro"
     user_data                   = true
@@ -122,7 +122,7 @@ module "bd_instance" {
 
   # Create database virtual Maching
   ec2 = {
-    ami                         = "ami-0f4e2eed7f5d84b15"
+    ami                         = "ami-068daf89d1895ab7b"
     Name                        = "db_VM"
     instance_type               = "t3.micro"
     user_data                   = false
