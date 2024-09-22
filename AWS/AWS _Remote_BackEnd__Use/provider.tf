@@ -6,10 +6,10 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "terraformbackendpka"
-    key            = "LockID"
-    region         = "ap-south-2"
-    dynamodb_table = "dynamo_demon"
+    bucket         = "terraformbackendpka" # Name of s3 bucket
+    key            = "LockID"              # Partition key name "LockID"
+    region         = "ap-south-2"          # Both create in same region
+    dynamodb_table = "dynamo_demon"        # Name of the dynamodb_table
   }
 }
 
