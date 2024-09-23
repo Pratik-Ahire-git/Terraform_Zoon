@@ -6,14 +6,20 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "terraformbackendpka" # Name of s3 bucket
-    key            = "LockID"              # Partition key name "LockID"
-    region         = "ap-south-2"          # Both create in same region
-    dynamodb_table = "dynamo_demon"        # Name of the dynamodb_table
+    bucket         = "backendbucketpka" # Name of s3 bucket
+    key            = "LockID"           # Partition key name "LockID"
+    region         = "us-east-1"        # Both create in same region
+    dynamodb_table = "dynamoDB"         # Name of the dynamodb_table
   }
 }
 
 provider "aws" {
   # Configuration options
   region = "ap-south-2"
+  default_tags {
+    tags = {
+      workspace : terraform.workspace
+    }
+  }
+
 }
