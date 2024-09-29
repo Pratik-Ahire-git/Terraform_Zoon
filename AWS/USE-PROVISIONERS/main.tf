@@ -72,7 +72,7 @@ resource "null_resource" "test" {
     host        = aws_instance.web.public_ip
   }
   provisioner "remote-exec" {
-    script = "./installation.sh"
+    script = "./installation.sh"        # execute this script on remote resource
 
   }
 
