@@ -5,7 +5,7 @@ terraform {
       version = "5.67.0"
     }
   }
-  cloud {
+  cloud {                                               # To establish a connection between your Terraform configuration and Terraform Cloud
 
     organization = "learning_work"
 

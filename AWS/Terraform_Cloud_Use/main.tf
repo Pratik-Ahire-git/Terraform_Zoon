@@ -1,7 +1,7 @@
 ### using VPC Module
 module "VPC" {
-  source  = "app.terraform.io/learning_work/vpc/aws"
-  version = "1.0.1"
+  source  = "app.terraform.io/learning_work/vpc/aws"    # Calling Source From Terraform Cloud Account
+  version = "1.0.1"                                     # tag version of VCS
   #source = "./modules/VPC"
   #source = "github.com/Pratik-Ahire-git/Terraform_Zoon/AWS/modules/VPC"
 
