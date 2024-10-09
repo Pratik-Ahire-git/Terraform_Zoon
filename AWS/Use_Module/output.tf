@@ -15,12 +15,12 @@ output "public_ip" {
 
 }
 
-output "url-preschool" {
-  value = [for instance in module.web_instance : "http://${module.web_instance.public_ip}/preschool"]
+output "url-woody" {
+  value = [for instance in module.web_instance : "http://${module.web_instance.public_ip}/woody"]
 
 }
 
-output "url-clinic" {
-  value = [for instance in module.web_instance : "http://${module.web_instance.public_ip}/clinic"]
+output "url-gamepad" {
+  value = [for instance in module.web_instance : "http://${module.web_instance.public_ip}/gamepad"]
 
 }
