@@ -1,6 +1,6 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "20.29.0"
+  version = "19.15.1"
 
   cluster_name                   = local.name
   cluster_endpoint_public_access = true
@@ -26,11 +26,12 @@ module "eks" {
     ami_type       = "AL2_x86_64"
     instance_types = ["m5.large"]
 
-    attach_cluster_primary_security_group = true
+    attach_cluster_primary_security_group = false
+    additional_security_group_ids         = [aws_security_group.worker_node_sg.id]
   }
 
   eks_managed_node_groups = {
-    ascode-cluster-wg = {
+    amc-cluster-wg = {
       min_size     = 1
       max_size     = 2
       desired_size = 1
